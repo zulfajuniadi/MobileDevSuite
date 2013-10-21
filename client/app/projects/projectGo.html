@@ -1,0 +1,26 @@
+<iframe id="daframe" src="" data-project="<%= project._id %>" frameborder="1" width="344px" height="568px"></iframe>
+<div id="loading"><i class="icon-refresh icon-spin"></i> Loading...</div>
+<div class="toolbar">
+    <div class="btn-group initButton" data-toggle="buttons-radio">
+        <button type="button" id="iPhone5" class="active btn">iPhone 5</button>
+        <button type="button" id="iPhone4" class="btn">iPhone 4</button>
+        <button type="button" id="iPad" class="btn">iPad</button>
+    </div>
+
+    <div class="btn-group initButton" data-toggle="buttons-radio">
+        <button type="button" id="portrait" class="active btn">Portrait</button>
+        <button type="button" id="landscape" class="btn">Landscape</button>
+    </div>
+
+    <div class="btn-group initButton">
+        <button type="button" disabled="disabled" id="inspector" class="btn">Inspector</button>
+        <button type="button" disabled="disabled" id="inspector" class="btn">Browser</button>
+        <button type="button" id="folder" data-path="<%= project.projectPath %>" class="btn">Folder</button>
+    </div>
+
+    <div class="btn-group initButton">
+        <button type="button" id="reload" disabled="disabled" class="btn">Reload</button>
+        <button type="button" id="exit" class="btn">Exit</button>
+    </div>
+</div>
+

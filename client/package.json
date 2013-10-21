@@ -1,0 +1,11 @@
+{
+    "main": "app://root/index.html",
+    "name": "nw-demo",
+    "no-edit-menu": true,
+    "node-remote": "*",
+    "window": {
+        "toolbar" : false,
+        "resizable" : false,
+        "always-on-top": true
+    }
+}

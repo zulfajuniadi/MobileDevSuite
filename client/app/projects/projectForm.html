@@ -1,0 +1,57 @@
+
+<% if(state === 'edit') { %>
+    <h1>Edit Project</h1>
+<% } else if (state === 'new') { %>
+    <h1>New Project</h1>
+<% } else { %>
+    <h1>Project Details</h1>
+<% } %>
+<hr>
+<% if(state !== 'view') { %>
+    <form class="form-horizontal projectForm">
+<% } else { %>
+    <div class="form-horizontal projectForm">
+<% } %>
+        <% if(state === 'edit') { %>
+            <input type="hidden" name="_id" value="<%= project._id %>">
+        <% } %>
+        <div class="control-group">
+            <label for="projectName" class="control-label">
+                Name
+            </label>
+            <div class="controls">
+                <input class="input-large" type="text" name="projectName" required id="projectName" value="<%= project.projectName %>">
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="projectPath" class="control-label">
+                Path
+            </label>
+            <div class="controls">
+                <div class="input-append">
+                    <input class="input-large" type="text" name="projectPath" id="projectPath" disabled required value="<%= project.projectPath %>">
+                    <span class="add-on getProjectPath" ><i class="icon-folder-open"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="projectUrl" class="control-label">
+                URL
+            </label>
+            <div class="controls">
+                <input class="input-large" type="text" name="projectUrl" required id="projectUrl" value="<%= project.projectUrl || 'http://localhost' %>">
+            </div>
+        </div>
+<% if(state !== 'view') { %>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="#/home" class="btn btn-secondary">Back</a>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </form>
+<% } else { %>
+        <div class="form-actions">
+            <a href="#/home" class="btn btn-secondary">Back</a>
+        </div>
+    </div>
+<% } %>

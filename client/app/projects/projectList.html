@@ -1,0 +1,46 @@
+<h1>Projects</h1>
+
+<table class="table table-stripped table-hover table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Path</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%  _.each(projects, function(project) { %>
+            <tr>
+                <td>
+                    <%= project.projectName %>
+                    <ul class="unstyled muted">
+                        <li><i class="icon-folder-open"></i> <%= project.projectPath %></li>
+                        <li><i class="icon-globe"></i> <%= project.projectUrl %></li>
+                    </ul>
+                </td>
+                <td>
+                    <a href="#/project/go/<%= project._id %>" class="btn btn-primary">
+                        <i class="icon-play"></i>
+                    </a>
+                    <a href="#/project/<%= project._id %>" class="view btn btn-secondary">
+                        <i class="icon-search"></i>
+                    </a>
+                    <a href="#/project/edit/<%= project._id %>" class="btn btn-secondary">
+                        <i class="icon-pencil"></i>
+                    </a>
+                    <a href="#/project/delete/<%= project._id %>" class="delete btn btn-danger">
+                        <i class="icon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                <a href="#/project/new" class="btn btn-primary pull-right">
+                    <i class="icon-plus"> Add New Project</i>
+                </a>
+            </td>
+        </tr>
+    </tfoot>
+</table>
