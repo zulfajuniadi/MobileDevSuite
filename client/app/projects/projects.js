@@ -112,7 +112,7 @@ define(['sarah', 'lib/jquery' , 'lib/bootstrap.min'], function(app){
                     },
                     'click #browser' : function(e, elem) {
                         if(app.Runtime.Servers.length > 0) {
-                            shell.openUri(app.Runtime.Servers[0].services[2].url + '/client/#anonymous');
+                            shell.openUri(app.Runtime.Servers[0].services[2].url);
                         }
                     },
                     'click #exit' : function() {
@@ -172,8 +172,9 @@ define(['sarah', 'lib/jquery' , 'lib/bootstrap.min'], function(app){
                                     iframe.src = services[2].url;
                                     document.getElementById('inspector').removeAttribute('disabled');
                                     document.getElementById('reload').removeAttribute('disabled');
+                                    document.getElementById('browser').removeAttribute('disabled');
                                     document.getElementById('loading').style.display = 'none';
-                                    document.getElementById('browser').style.display = 'none';
+                                    document.querySelector('.toolbar').appendChild(services[2].qr);
                                 },2000)
 
                             });

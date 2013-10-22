@@ -4,7 +4,7 @@
     "no-edit-menu": true,
     "node-remote": "*",
     "window": {
-        "toolbar" : false,
+        "toolbar" : true,
         "resizable" : false,
         "always-on-top": true
     }
